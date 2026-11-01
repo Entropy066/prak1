@@ -28,32 +28,38 @@ a = (C[0]-B[0], C[1]-B[1])
 b = (A[0]-C[0], A[1]-C[1])
 c = (A[0]-B[0], A[1]-B[1])
 
-#length = √(x² + y²)
+#length with pythagoras
 la = ((C[0]-B[0])**2 + (C[1]-B[1])**2)**0.5
 lb = ((A[0]-C[0])**2 + (A[1]-C[1])**2)**0.5
 lc = ((A[0]-B[0])**2 + (A[1]-B[1])**2)**0.5
 
 raw_w_cos = (la / lc)
 
-#stuff for arccos
-counter = 1
+#Loop preconditions
+base = mt.pi / 2
+expo = 1
+t = raw_w_cos ** expo
+arc = base  
+term = t
 
-# to get into loop
-fresh = True
-arc = mt.pi / 2
-term = raw_w_cos
-dez = 1
+while abs(term) > 0.000001: 
+    zaehler = 1                
+    for i in range(1, expo, 2):      
+      zaehler = zaehler * i
+
+    nenner = 1
+    for i in range(2, expo, 2):     
+      nenner = nenner * i
+    nenner = nenner * expo
+    term = zaehler / nenner * t ** expo     
+    arc = arc -term
+    expo = expo + 2
+
+degree = round(arc * 180 / mt.pi, 2)
+
+print(f"{degree}°")
 
 
-term = dcounter
-dcounter = 1
 
-while dez > 0.000001 or fresh:
-    fresh = False
-    term = term ** counter
-    arc = arc - term
-    dez = arc % 1
-    counter = counter + 2
-    dcounter = dcounter 
 
-print (arc)
+
