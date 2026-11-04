@@ -1,4 +1,4 @@
-#Eingaben: x1,x2
+#Input: x1,x2
 #winkel ausrechnen
 
 #h1 ist parallel zur x achse, y nicht.
