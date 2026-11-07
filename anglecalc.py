@@ -1,7 +1,7 @@
 #Input: x1,x2
 #winkel ausrechnen
 
-#h1 ist parallel zur x achse, y nicht.
+#h1 ist parallol zur x achse, y nicht.
 import math as mt
 
 x1 = float(input("Enter X1: "))
